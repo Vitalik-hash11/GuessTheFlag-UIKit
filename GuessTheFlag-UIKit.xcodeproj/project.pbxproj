@@ -56,15 +56,23 @@
 		DD099D8F2894775700483C41 /* GuessTheFlag-UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				DD099D902894775700483C41 /* AppDelegate.swift */,
-				DD099D922894775700483C41 /* SceneDelegate.swift */,
 				DD099D942894775700483C41 /* ViewController.swift */,
 				DD099D962894775700483C41 /* Main.storyboard */,
 				DD099D992894775C00483C41 /* Assets.xcassets */,
-				DD099D9B2894775C00483C41 /* LaunchScreen.storyboard */,
+				DD099DA42894778400483C41 /* SupportingFiles */,
 				DD099D9E2894775C00483C41 /* Info.plist */,
 			);
 			path = "GuessTheFlag-UIKit";
+			sourceTree = "<group>";
+		};
+		DD099DA42894778400483C41 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DD099D902894775700483C41 /* AppDelegate.swift */,
+				DD099D922894775700483C41 /* SceneDelegate.swift */,
+				DD099D9B2894775C00483C41 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
