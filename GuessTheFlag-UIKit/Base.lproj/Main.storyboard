@@ -27,8 +27,11 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="us"/>
+                                        <connections>
+                                            <action selector="flagButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GYJ-SK-xss"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReA-hA-TE4">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReA-hA-TE4">
                                         <rect key="frame" x="0.0" y="115" width="200" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="70w-YQ-JZx"/>
@@ -36,8 +39,11 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="uk"/>
+                                        <connections>
+                                            <action selector="flagButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vjt-KE-Zjf"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbY-O3-3Ww">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbY-O3-3Ww">
                                         <rect key="frame" x="0.0" y="230" width="200" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="8Kx-3A-6EM"/>
@@ -45,6 +51,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="italy"/>
+                                        <connections>
+                                            <action selector="flagButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0y-hq-IRA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
