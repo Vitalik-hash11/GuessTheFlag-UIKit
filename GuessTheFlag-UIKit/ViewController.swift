@@ -40,21 +40,34 @@ class ViewController: UIViewController {
     @IBAction func flagButtonPressed(_ sender: UIButton) {
         sender.layer.borderWidth = 2
         currentQuestion += 1
+        let failureAlert = UIAlertController(title: "Wrong! That’s the flag of \(flags[sender.tag].uppercased())", message: nil, preferredStyle: .actionSheet)
+        failureAlert.addAction(UIAlertAction(title: "Got it!", style: .default))
         if sender.tag == correctAnswer {
             sender.layer.borderColor = UIColor.green.cgColor
             score += 1
         } else {
-            sender.layer.borderColor = UIColor.red.cgColor
+            present(failureAlert, animated: true)
         }
         scoreLabel.text = "Score: \(score)"
         
         if currentQuestion % totalQuestions == 0 {
-            let ac = UIAlertController(title: "Your score is: \(score)", message: "Do you want to proceed?", preferredStyle: .alert)
-            
-            ac.addAction(UIAlertAction(title: "Proceed", style: .default))
-            ac.addAction(UIAlertAction(title: "Restart", style: .cancel, handler: reset))
-            
-            present(ac, animated: true)
+            if failureAlert.isBeingPresented {
+                failureAlert.dismiss(animated: true) { [weak self] in
+                    let ac = UIAlertController(title: "Your score is: \(self?.score ?? 0)", message: "Do you want to proceed?", preferredStyle: .alert)
+                    
+                    ac.addAction(UIAlertAction(title: "Proceed", style: .default))
+                    ac.addAction(UIAlertAction(title: "Restart", style: .cancel, handler: self?.reset))
+
+                    self?.present(ac, animated: true)
+                }
+            } else {
+                let ac = UIAlertController(title: "Your score is: \(score)", message: "Do you want to proceed?", preferredStyle: .alert)
+                
+                ac.addAction(UIAlertAction(title: "Proceed", style: .default))
+                ac.addAction(UIAlertAction(title: "Restart", style: .cancel, handler: reset))
+
+                present(ac, animated: true)
+            }
         }
         
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { [weak self] timer in
